@@ -1,0 +1,29 @@
+# Grand Prix Companion – Track Configuration File
+# Format: key=value  |  [curve_points] section followed by x,y,cumulative_distance rows
+# Lines starting with '#' are comments and are ignored.
+
+name         = Monaco Grand Prix Circuit
+length_meters= 3337.0
+total_laps   = 78
+sector1_end_m= 1050.0
+sector2_end_m= 2310.0
+
+[curve_points]
+# x      , y      , cumulative_distance_m
+0.0      , 0.0    , 0.0
+80.0     , -15.0  , 250.0
+95.0     , -80.0  , 420.0
+60.0     , -140.0 , 620.0
+10.0     , -190.0 , 900.0
+-50.0    , -200.0 , 1100.0
+-120.0   , -170.0 , 1350.0
+-160.0   , -100.0 , 1600.0
+-140.0   , -30.0  , 1850.0
+-80.0    , 40.0   , 2100.0
+-20.0    , 80.0   , 2310.0
+60.0     , 90.0   , 2550.0
+130.0    , 60.0   , 2780.0
+150.0    , 10.0   , 2980.0
+100.0    , -40.0  , 3150.0
+40.0     , -20.0  , 3280.0
+0.0      , 0.0    , 3337.0

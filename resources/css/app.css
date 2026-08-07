@@ -1,0 +1,367 @@
+/* ============================================================
+   Grand Prix Companion — Application Stylesheet
+   Target: JavaFX 21
+   ============================================================ */
+
+/* ── Root variables ──────────────────────────────────────── */
+.root {
+    -fx-font-family: "Segoe UI", "Inter", "Roboto", sans-serif;
+
+    /* Palette */
+    -gpc-bg-deep:      #0b0e14;
+    -gpc-bg-panel:     #141820;
+    -gpc-bg-card:      #1c2130;
+    -gpc-bg-elevated:  #232b3c;
+    -gpc-border:       #2a3350;
+
+    -gpc-accent-red:   #e8002d;   /* F1 red */
+    -gpc-accent-blue:  #3b82f6;
+    -gpc-accent-green: #22c55e;
+    -gpc-accent-amber: #f59e0b;
+
+    -gpc-text-primary:   #f0f4ff;
+    -gpc-text-secondary: #8b9ab8;
+    -gpc-text-muted:     #4a5568;
+
+    /* Tire compound colours */
+    -gpc-tire-soft:   #e8002d;
+    -gpc-tire-medium: #fbbf24;
+    -gpc-tire-hard:   #e5e7eb;
+    -gpc-tire-inter:  #34d399;
+    -gpc-tire-wet:    #60a5fa;
+
+    -fx-background-color: -gpc-bg-deep;
+    -fx-text-fill: -gpc-text-primary;
+}
+
+/* ── Typography ──────────────────────────────────────────── */
+.label {
+    -fx-text-fill: -gpc-text-primary;
+    -fx-font-size: 13px;
+}
+
+.label-secondary {
+    -fx-text-fill: -gpc-text-secondary;
+    -fx-font-size: 12px;
+}
+
+.label-muted {
+    -fx-text-fill: -gpc-text-muted;
+    -fx-font-size: 11px;
+}
+
+.section-title {
+    -fx-text-fill: -gpc-text-primary;
+    -fx-font-size: 11px;
+    -fx-font-weight: bold;
+    -fx-text-transform: uppercase;
+    -fx-letter-spacing: 0.08em;
+}
+
+.hero-value {
+    -fx-text-fill: -gpc-text-primary;
+    -fx-font-size: 28px;
+    -fx-font-weight: bold;
+}
+
+.accent-value {
+    -fx-text-fill: -gpc-accent-red;
+    -fx-font-size: 22px;
+    -fx-font-weight: bold;
+}
+
+/* ── Panels & cards ──────────────────────────────────────── */
+.panel-card {
+    -fx-background-color: -gpc-bg-panel;
+    -fx-background-radius: 10;
+    -fx-border-color: -gpc-border;
+    -fx-border-width: 1;
+    -fx-border-radius: 10;
+    -fx-padding: 14;
+}
+
+.panel-card-elevated {
+    -fx-background-color: -gpc-bg-elevated;
+    -fx-background-radius: 8;
+    -fx-border-color: -gpc-border;
+    -fx-border-width: 1;
+    -fx-border-radius: 8;
+    -fx-padding: 10;
+}
+
+.panel-header {
+    -fx-background-color: linear-gradient(to right, #1e2a45, -gpc-bg-panel);
+    -fx-background-radius: 8 8 0 0;
+    -fx-padding: 10 14;
+    -fx-border-color: transparent transparent -gpc-border transparent;
+    -fx-border-width: 0 0 1 0;
+}
+
+.panel-separator {
+    -fx-background-color: -gpc-border;
+    -fx-pref-height: 1;
+}
+
+/* ── Buttons ─────────────────────────────────────────────── */
+.btn-primary {
+    -fx-background-color: -gpc-accent-red;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-font-size: 13px;
+    -fx-background-radius: 6;
+    -fx-padding: 8 20;
+    -fx-cursor: hand;
+}
+
+.btn-primary:hover {
+    -fx-background-color: derive(-gpc-accent-red, 15%);
+    -fx-effect: dropshadow(gaussian, rgba(232,0,45,0.5), 10, 0, 0, 0);
+}
+
+.btn-primary:pressed {
+    -fx-background-color: derive(-gpc-accent-red, -10%);
+}
+
+.btn-primary:disabled {
+    -fx-opacity: 0.4;
+    -fx-cursor: default;
+}
+
+.btn-secondary {
+    -fx-background-color: -gpc-bg-elevated;
+    -fx-text-fill: -gpc-text-primary;
+    -fx-font-size: 13px;
+    -fx-background-radius: 6;
+    -fx-border-color: -gpc-border;
+    -fx-border-width: 1;
+    -fx-border-radius: 6;
+    -fx-padding: 8 20;
+    -fx-cursor: hand;
+}
+
+.btn-secondary:hover {
+    -fx-background-color: -gpc-border;
+    -fx-border-color: -gpc-accent-blue;
+}
+
+.btn-secondary:disabled {
+    -fx-opacity: 0.4;
+    -fx-cursor: default;
+}
+
+.btn-icon {
+    -fx-background-color: transparent;
+    -fx-text-fill: -gpc-text-secondary;
+    -fx-font-size: 16px;
+    -fx-padding: 4 8;
+    -fx-cursor: hand;
+    -fx-background-radius: 4;
+}
+
+.btn-icon:hover {
+    -fx-background-color: -gpc-bg-elevated;
+    -fx-text-fill: -gpc-text-primary;
+}
+
+/* ── TableView (Leaderboard) ─────────────────────────────── */
+.table-view {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-padding: 0;
+}
+
+.table-view .column-header-background {
+    -fx-background-color: -gpc-bg-card;
+    -fx-background-radius: 6 6 0 0;
+}
+
+.table-view .column-header {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent transparent -gpc-border transparent;
+    -fx-border-width: 0 0 1 0;
+    -fx-padding: 8 6;
+}
+
+.table-view .column-header .label {
+    -fx-text-fill: -gpc-text-secondary;
+    -fx-font-size: 11px;
+    -fx-font-weight: bold;
+    -fx-text-transform: uppercase;
+    -fx-letter-spacing: 0.06em;
+    -fx-alignment: center-left;
+}
+
+.table-view .table-row-cell {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent transparent -gpc-border transparent;
+    -fx-border-width: 0 0 1 0;
+    -fx-padding: 0;
+}
+
+.table-view .table-row-cell:even {
+    -fx-background-color: rgba(255,255,255,0.015);
+}
+
+.table-view .table-row-cell:selected {
+    -fx-background-color: rgba(59,130,246,0.15);
+    -fx-border-color: transparent transparent -gpc-accent-blue transparent;
+}
+
+.table-view .table-row-cell:hover {
+    -fx-background-color: rgba(255,255,255,0.04);
+}
+
+.table-view .table-cell {
+    -fx-text-fill: -gpc-text-primary;
+    -fx-font-size: 13px;
+    -fx-padding: 7 6;
+    -fx-border-color: transparent;
+    -fx-alignment: center-left;
+}
+
+.table-view .scroll-bar:vertical {
+    -fx-background-color: transparent;
+}
+
+.table-view .scroll-bar:vertical .thumb {
+    -fx-background-color: -gpc-border;
+    -fx-background-radius: 3;
+}
+
+/* ── ComboBox (speed selector) ───────────────────────────── */
+.combo-box {
+    -fx-background-color: -gpc-bg-elevated;
+    -fx-border-color: -gpc-border;
+    -fx-border-width: 1;
+    -fx-border-radius: 6;
+    -fx-background-radius: 6;
+    -fx-text-fill: -gpc-text-primary;
+    -fx-font-size: 13px;
+    -fx-padding: 4 8;
+    -fx-cursor: hand;
+    -fx-min-width: 90px;
+}
+
+.combo-box .list-cell {
+    -fx-text-fill: -gpc-text-primary;
+    -fx-background-color: transparent;
+    -fx-font-size: 13px;
+}
+
+.combo-box-popup .list-view {
+    -fx-background-color: -gpc-bg-elevated;
+    -fx-border-color: -gpc-border;
+    -fx-border-width: 1;
+    -fx-border-radius: 6;
+    -fx-background-radius: 6;
+}
+
+.combo-box-popup .list-view .list-cell:hover {
+    -fx-background-color: -gpc-border;
+}
+
+/* ── ProgressBar (tire wear / fuel) ─────────────────────── */
+.progress-bar {
+    -fx-background-color: -gpc-bg-card;
+    -fx-background-radius: 4;
+    -fx-pref-height: 7;
+}
+
+.progress-bar .bar {
+    -fx-background-color: -gpc-accent-green;
+    -fx-background-radius: 4;
+    -fx-background-insets: 0;
+}
+
+.progress-bar.warn .bar    { -fx-background-color: -gpc-accent-amber; }
+.progress-bar.danger .bar  { -fx-background-color: -gpc-accent-red; }
+
+/* ── Status / info chips ─────────────────────────────────── */
+.chip {
+    -fx-background-radius: 20;
+    -fx-padding: 2 10;
+    -fx-font-size: 11px;
+    -fx-font-weight: bold;
+}
+
+.chip-green  { -fx-background-color: rgba(34,197,94,0.18);  -fx-text-fill: #22c55e; }
+.chip-red    { -fx-background-color: rgba(232,0,45,0.18);   -fx-text-fill: #e8002d; }
+.chip-amber  { -fx-background-color: rgba(245,158,11,0.18); -fx-text-fill: #f59e0b; }
+.chip-blue   { -fx-background-color: rgba(59,130,246,0.18); -fx-text-fill: #60a5fa; }
+.chip-grey   { -fx-background-color: rgba(139,154,184,0.18);-fx-text-fill: #8b9ab8; }
+
+/* ── Tire-compound dots ──────────────────────────────────── */
+.tire-dot {
+    -fx-background-radius: 50%;
+    -fx-min-width: 12px;
+    -fx-min-height: 12px;
+    -fx-max-width: 12px;
+    -fx-max-height: 12px;
+}
+.tire-dot-soft   { -fx-background-color: -gpc-tire-soft;  }
+.tire-dot-medium { -fx-background-color: -gpc-tire-medium; }
+.tire-dot-hard   { -fx-background-color: -gpc-tire-hard;   }
+.tire-dot-inter  { -fx-background-color: -gpc-tire-inter;  }
+.tire-dot-wet    { -fx-background-color: -gpc-tire-wet;    }
+
+/* ── Scrollpane ──────────────────────────────────────────── */
+.scroll-pane {
+    -fx-background-color: transparent;
+    -fx-background: transparent;
+}
+
+.scroll-pane .viewport {
+    -fx-background-color: transparent;
+}
+
+/* ── Divider / SplitPane ─────────────────────────────────── */
+.split-pane {
+    -fx-background-color: -gpc-bg-deep;
+    -fx-padding: 0;
+}
+
+.split-pane-divider {
+    -fx-background-color: -gpc-border;
+    -fx-padding: 0 1;
+}
+
+/* ── Tooltip ─────────────────────────────────────────────── */
+.tooltip {
+    -fx-background-color: -gpc-bg-elevated;
+    -fx-border-color: -gpc-border;
+    -fx-border-width: 1;
+    -fx-border-radius: 6;
+    -fx-background-radius: 6;
+    -fx-text-fill: -gpc-text-primary;
+    -fx-font-size: 12px;
+    -fx-padding: 6 10;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.5), 12, 0, 0, 4);
+}
+
+/* ── Alert bar (weather / SC) ────────────────────────────── */
+.alert-bar {
+    -fx-padding: 6 14;
+    -fx-background-radius: 6;
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+}
+
+.alert-bar-sc  { -fx-background-color: rgba(245,158,11,0.25); -fx-text-fill: #f59e0b; }
+.alert-bar-vsc { -fx-background-color: rgba(59,130,246,0.25); -fx-text-fill: #60a5fa; }
+.alert-bar-wet { -fx-background-color: rgba(96,165,250,0.20); -fx-text-fill: #93c5fd; }
+
+/* ── Position badge ──────────────────────────────────────── */
+.pos-badge {
+    -fx-background-radius: 4;
+    -fx-alignment: center;
+    -fx-font-weight: bold;
+    -fx-font-size: 12px;
+    -fx-min-width: 26px;
+    -fx-pref-width: 26px;
+    -fx-pref-height: 22px;
+}
+
+.pos-p1   { -fx-background-color: #FFD700; -fx-text-fill: #1a1a1a; }
+.pos-p2   { -fx-background-color: #C0C0C0; -fx-text-fill: #1a1a1a; }
+.pos-p3   { -fx-background-color: #CD7F32; -fx-text-fill: #ffffff; }
+.pos-other{ -fx-background-color: -gpc-bg-elevated; -fx-text-fill: -gpc-text-secondary; }

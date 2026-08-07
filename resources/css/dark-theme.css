@@ -1,0 +1,268 @@
+/* Globals */
+.root {
+    -fx-background-color: #111111;
+    -fx-font-family: "Inter", "Segoe UI", "Helvetica Neue", sans-serif;
+}
+
+/* General text styling */
+.label {
+    -fx-text-fill: #d1d5db;
+}
+
+.text {
+    -fx-fill: #d1d5db;
+}
+
+.section-title {
+    -fx-text-fill: #f8fafc;
+    -fx-font-size: 13px;
+    -fx-font-weight: 800;
+    -fx-letter-spacing: 1.2px;
+}
+
+.label-secondary {
+    -fx-text-fill: #64748b;
+    -fx-font-size: 12px;
+}
+
+/* Panel Containers */
+.panel-card {
+    -fx-background-color: #181818;
+    -fx-border-color: #222222;
+    -fx-border-radius: 6;
+    -fx-background-radius: 6;
+}
+
+.panel-strategy-call {
+    -fx-background-color: rgba(224, 0, 0, 0.05);
+    -fx-border-color: #e00000;
+    -fx-border-radius: 6;
+    -fx-background-radius: 6;
+}
+
+/* Button Styling */
+.button {
+    -fx-background-color: transparent;
+    -fx-border-color: #333333;
+    -fx-text-fill: #d1d5db;
+    -fx-border-radius: 4;
+    -fx-background-radius: 4;
+    -fx-padding: 6 12;
+    -fx-font-size: 11px;
+    -fx-font-weight: 700;
+    -fx-cursor: hand;
+}
+
+.button:hover {
+    -fx-background-color: #222222;
+}
+
+.button:disabled {
+    -fx-opacity: 0.5;
+}
+
+/* Primary Button (Play/Resume) */
+.btn-primary {
+    -fx-background-color: rgba(255, 255, 255, 0.1);
+    -fx-border-color: #555555;
+    -fx-text-fill: #ffffff;
+}
+
+.btn-primary:hover {
+    -fx-background-color: rgba(255, 255, 255, 0.15);
+}
+
+.btn-secondary {
+    /* Matches default button style */
+}
+
+/* Red Flag / Force Pit (Solid Stark Red) */
+.btn-red-solid {
+    -fx-background-color: #e00000;
+    -fx-border-color: #e00000;
+    -fx-text-fill: #ffffff;
+}
+
+.btn-red-solid:hover {
+    -fx-background-color: #ff1a1a;
+}
+
+/* AI Strategy Call (Stark Red Outline) */
+.btn-red-outline {
+    -fx-background-color: transparent;
+    -fx-border-color: #e00000;
+    -fx-text-fill: #e00000;
+}
+
+.btn-red-outline:hover {
+    -fx-background-color: rgba(224, 0, 0, 0.1);
+}
+
+/* Safety Car Deployment (Yellow/Amber Outline) */
+.btn-yellow-outline {
+    -fx-background-color: transparent;
+    -fx-border-color: #eab308;
+    -fx-text-fill: #eab308;
+}
+
+.btn-yellow-outline:hover {
+    -fx-background-color: rgba(234, 179, 8, 0.1);
+}
+
+/* Badges / Chips */
+.chip {
+    -fx-padding: 3 10;
+    -fx-background-radius: 12;
+    -fx-border-radius: 12;
+    -fx-border-width: 1;
+    -fx-font-weight: bold;
+    -fx-font-size: 11px;
+}
+
+/* Track Clear - Cyan/Green */
+.chip-green {
+    -fx-background-color: rgba(0, 219, 169, 0.15);
+    -fx-border-color: #00dba9;
+    -fx-text-fill: #00dba9;
+}
+
+/* Safety Car - Yellow */
+.chip-amber {
+    -fx-background-color: rgba(234, 179, 8, 0.15);
+    -fx-border-color: #eab308;
+    -fx-text-fill: #eab308;
+}
+
+/* VSC - Blue */
+.chip-blue {
+    -fx-background-color: rgba(59, 130, 246, 0.15);
+    -fx-border-color: #3b82f6;
+    -fx-text-fill: #3b82f6;
+}
+
+/* TableView (Leaderboard) - No Gridlines, Alternating Dark Colors */
+.table-view {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-padding: 0;
+}
+
+.table-view .column-header-background {
+    -fx-background-color: transparent;
+    -fx-border-width: 0 0 1 0;
+    -fx-border-color: #2a2a2a;
+    -fx-padding: 0 0 5 0;
+}
+
+.table-view .column-header, .table-view .filler {
+    -fx-background-color: transparent;
+    -fx-border-width: 0;
+    -fx-size: 25px;
+}
+
+.table-view .column-header .label {
+    -fx-text-fill: #94a3b8;
+    -fx-font-size: 10px;
+    -fx-font-weight: 800;
+    -fx-alignment: center-left;
+}
+
+.table-row-cell {
+    -fx-background-color: transparent;
+    -fx-border-width: 0;
+    -fx-table-cell-border-color: transparent;
+    -fx-cell-size: 32px;
+}
+
+/* Alternating Row Colors */
+.table-row-cell:odd {
+    -fx-background-color: rgba(30, 30, 30, 0.6);
+}
+
+.table-row-cell:even {
+    -fx-background-color: transparent;
+}
+
+.table-row-cell:selected {
+    -fx-background-color: rgba(255, 255, 255, 0.05);
+}
+
+.table-cell {
+    -fx-text-fill: #f8fafc;
+    -fx-font-size: 12px;
+    -fx-font-weight: 600;
+    -fx-alignment: center-left;
+    -fx-border-width: 0;
+    -fx-padding: 0 5;
+}
+
+/* Scrollbar tweaks */
+.table-view .scroll-bar:vertical, .table-view .scroll-bar:horizontal {
+    -fx-background-color: transparent;
+}
+
+.table-view .scroll-bar:vertical .thumb, .table-view .scroll-bar:horizontal .thumb {
+    -fx-background-color: #333333;
+    -fx-background-radius: 4;
+}
+
+/* Progress Bars (Telemetry Inspector) */
+.progress-bar {
+    -fx-min-height: 8px;
+    -fx-max-height: 8px;
+    -fx-background-radius: 4;
+    -fx-border-radius: 4;
+}
+
+.progress-bar .track {
+    -fx-background-color: #222222;
+    -fx-background-radius: 4;
+    -fx-border-radius: 4;
+}
+
+.progress-bar .bar {
+    /* Gradient from soft white/pink to red to match tire wear aesthetics */
+    -fx-background-color: linear-gradient(to right, #fca5a5, #e00000);
+    -fx-background-radius: 4;
+    -fx-border-radius: 4;
+}
+
+.progress-bar.danger .bar {
+    -fx-background-color: #e00000;
+}
+
+.progress-bar.warn .bar {
+    -fx-background-color: #eab308;
+}
+
+/* ComboBox Styling */
+.combo-box {
+    -fx-background-color: #1a1a1a;
+    -fx-border-color: #333333;
+    -fx-border-radius: 4;
+    -fx-background-radius: 4;
+}
+
+.combo-box .list-cell {
+    -fx-text-fill: #f8fafc;
+    -fx-font-weight: bold;
+}
+
+.combo-box .arrow-button {
+    -fx-background-color: transparent;
+}
+
+.combo-box .arrow {
+    -fx-background-color: #94a3b8;
+}
+
+.combo-box-popup .list-view {
+    -fx-background-color: #181818;
+    -fx-border-color: #333333;
+}
+
+.combo-box-popup .list-view .list-cell:hover, 
+.combo-box-popup .list-view .list-cell:filled:selected {
+    -fx-background-color: rgba(255, 255, 255, 0.1);
+    -fx-text-fill: #ffffff;
+}
